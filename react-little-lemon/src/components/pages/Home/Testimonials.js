@@ -7,33 +7,29 @@ import TestimonialCard from './TestimonialCard';
 
 const customers = [
   {
-    fullName: 'Maria Sanchez',
+		fullName: 'Emily Rodriguez',
     image: customer1Image,
     rating: [1, 1, 1, 1, 0.5],
-    says: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+		says: `The Lemon Dessert is heavenly! A nostalgic treat with authentic ingredients. Sweet and tangy flavors dance on the palate, leaving you craving more.`,
   },
   {
-    fullName: 'Antony Clifton',
+		fullName: 'David Smith',
     image: customer2Image,
     rating: [1, 1, 1, 1, 1],
-    says: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+		says: `Little Lemon Restaurant's dishes are extraordinary! The Greek Salad, Bruschetta, and Lemon Dessert all showcase their commitment to quality and flavor. Truly the best Mediterranean restaurant in DC.`,
   },
   {
-    fullName: 'Tamika Jackson',
+		fullName: 'Sarah Johnson',
     image: customer3Image,
     rating: [1, 1, 1, 1, 0.5],
-    says: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+		says: `Love the Greek Salad at Little Lemon! Crispy lettuce, peppers, olives, and feta cheese create a perfect harmony of flavors. The garlic and rosemary croutons add a delightful crunch.`,
   },
   {
-    fullName: 'Brandon Ming',
+		fullName: 'Michael Lee',
     image: customer4Image,
     rating: [1, 1, 1, 1],
-    says: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-  },
+		says: `The Bruschetta is a flavor explosion! Grilled bread with garlic and olive oil topped with fresh tomatoes and basil. The balsamic glaze is the perfect finishing touch.`,
+	},
 ];
 
 const Testimonials = () => {

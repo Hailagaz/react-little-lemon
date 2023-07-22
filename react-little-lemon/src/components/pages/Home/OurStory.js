@@ -3,33 +3,30 @@ import chefsMarioAndAdrianBImage from './assets/chefs-mario-and-adrian_b.jpg';
 import './OurStory.css';
 
 const OurStory = () => {
-  return (
-    <section className="container grid our-story">
-      <div className="our-story-description">
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum. Sed ut 
-          perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo 
-          inventore veritatis et quasi architecto beatae vitae dicta sunt 
-          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut 
-          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
-          voluptatem sequi nesciunt.
-        </p>
-      </div>
-      <div className="our-story-chefs">
-        <img src={chefsMarioAndAdrianAImage} alt="Chefs Mario and Adrian" />
-        <img src={chefsMarioAndAdrianBImage} alt="Chefs Mario and Adrian" />
-      </div>
-    </section>
-  );
+	return (
+		<section className="container grid our-story">
+			<div className="our-story-description">
+				<h1>Little Lemon</h1>
+				<h2>Washington</h2>
+				<p>
+					Welcome to Little Lemon Restaurant, a family-owned gem in the heart of Washington DC, serving rich Mediterranean flavors with a modern twist. Our passion for preserving authentic recipes led us on a culinary journey, sharing our culture with the world.
+				</p>
+				<p>
+					At Little Lemon, we use locally-sourced, finest ingredients to craft delightful dishes like creamy hummus and perfectly seasoned falafel. Our warm ambiance and hospitable staff ensure an exceptional dining experience, treating every guest like family.
+				</p>
+				<p>
+					Enjoy a diverse menu with mouthwatering kebabs, sumptuous shawarma wraps, and hearty vegetarian platters. Join us in celebrating culture, tradition, and the love of good food.
+				</p>
+				<p>
+					Thank you for being part of our story. Let's share more unforgettable moments together!
+				</p>
+			</div>
+			<div className="our-story-chefs">
+				<img src={chefsMarioAndAdrianAImage} alt="Chefs Mario and Adrian" />
+				<img src={chefsMarioAndAdrianBImage} alt="Chefs Mario and Adrian" />
+			</div>
+		</section>
+	);
 };
 
 export default OurStory;

@@ -25,7 +25,7 @@ const meals = [
   {
     name: 'Lemon Dessert',
     image: lemonDessertImage,
-    price: '$5.00',
+    price: '$7.99',
     description: `This comes straight from grandma's recipe book, every last 
       ingredient has been sourced and is as authentic as can be imagined.`,
   },
