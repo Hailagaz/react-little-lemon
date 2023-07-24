@@ -1,7 +1,7 @@
 {
   "name": "react-little-lemon",
   "version": "0.1.0",
-  "homepage": "https://hailagaz.github.io/react-little-lemon",
+  "homepage": "https://hailagaz.github.io/react-little-lemon/react-little-lemon",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
