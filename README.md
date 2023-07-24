@@ -1,3 +1,3 @@
-## The **_main branch_** of the repository is used for **_storing_** the code
+## The ***main branch*** of the repository is used for ***storing*** the code
 
-## The **_gh-pages branch_** of the repository is used for **_deploying_** the project on GitHun Pages
+## The ***gh-pages branch*** of the repository is used for ***deploying*** the project on GitHun Pages
