@@ -2,19 +2,15 @@
   "name": "react-little-lemon",
   "version": "0.1.0",
   "private": true,
-  "main": "index.js",
-  "respository": "https://github.com/hailagaz/react-little-lemon.git",
-  "homepage": "https://hailagaz.github.io/react-little-lemon/",
+	"homepage": "https://hailagaz.github.io/react-little-lemon/",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.7.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -22,11 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:cv": "react-scripts test --coverage --verbose",
     "eject": "react-scripts eject",
-    "clean": "rm -rf coverage",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+		"deploy": "gh-pages -d build",
+		"predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,9 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
-    "gh-pages": "^5.0.0",
-    "install": "^0.13.0",
-    "npm": "^9.8.1"
+		"@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "gh-pages": "^5.0.0"
   }
 }
