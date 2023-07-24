@@ -10,13 +10,13 @@ const customers = [
 		fullName: 'Emily Rodriguez',
     image: customer1Image,
     rating: [1, 1, 1, 1, 0.5],
-		says: `The Lemon Dessert is heavenly! A nostalgic treat with authentic ingredients. Sweet and tangy flavors dance on the palate, leaving you craving more.`,
+		says: `The Baklava dessert is heavenly! A nostalgic treat with authentic ingredients. Sweet flavors dance on the palate, leaving you craving more.`,
   },
   {
 		fullName: 'David Smith',
     image: customer2Image,
     rating: [1, 1, 1, 1, 1],
-		says: `Little Lemon Restaurant's dishes are extraordinary! The Greek Salad, Bruschetta, and Lemon Dessert all showcase their commitment to quality and flavor. Truly the best Mediterranean restaurant in DC.`,
+		says: `Little Lemon Restaurant's dishes are extraordinary! The Greek Salad, Grilled Octopus, and Baklava all showcase their commitment to quality and flavor. Truly the best Mediterranean restaurant in DC.`,
   },
   {
 		fullName: 'Sarah Johnson',
@@ -28,7 +28,7 @@ const customers = [
 		fullName: 'Michael Lee',
     image: customer4Image,
     rating: [1, 1, 1, 1],
-		says: `The Bruschetta is a flavor explosion! Grilled bread with garlic and olive oil topped with fresh tomatoes and basil. The balsamic glaze is the perfect finishing touch.`,
+		says: `The Grilled Octopus is a flavor explosion! Tender octopus, grilled to perfection and marinated with a delightful blend of herbs and spices.`,
 	},
 ];
 

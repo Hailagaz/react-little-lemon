@@ -1,4 +1,4 @@
-import { faMotorcycle } from '@fortawesome/free-solid-svg-icons';
+import { faMotorcycle, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import './MealCard.css';
@@ -17,7 +17,7 @@ const MealCard = ({ meal }) => {
       <div className="meal-card-body-footer">
         <p>{meal.description}</p>
         <Link to={pages.get('orderOnline').path}>
-          Order a delivery <FontAwesomeIcon icon={faMotorcycle} />
+          Order a delivery <FontAwesomeIcon icon={faUtensils} />
         </Link>
       </div>
     </article>
