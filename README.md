@@ -1,3 +1,3 @@
-## The main branch of the repository is used for storing the code
+## The <u>main branch</u> of the repository is used for <u>storing</u> the code
 
-## The gh-pages branch build of the repository is used for deploying the project on GitHun Pages
+## The <u>gh-pages branch</u> of the repository is used for <u>deploying</u> the project on GitHun Pages
