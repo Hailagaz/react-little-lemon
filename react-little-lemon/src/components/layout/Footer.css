@@ -97,7 +97,8 @@
 @media (max-width: 576px) {
 .site-footer .container {
   grid-template-columns: auto;
-	/*justify-items: center;*/
+	justify-items: center;
+	text-align: center;
 }
 
 .site-footer-logo {
