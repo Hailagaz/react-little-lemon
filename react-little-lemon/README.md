@@ -1,78 +1,239 @@
-# GitHub Codespaces ♥️ React
+# Table of Contents
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+- [Table of Contents](#table-of-contents)
+- [The Booking App](#the-booking-app)
+- [Setup and Evaluation](#setup-and-evaluation)
+- [Front-end Architecture](#front-end-architecture)
+  - [Folder Structure](#folder-structure)
+  - [Component Architecture](#component-architecture)
+  - [Naming Conventions](#naming-conventions)
+  - [Use of Dependencies](#use-of-dependencies)
+  - [Data Fetching](#data-fetching)
+  - [Unit Testing](#unit-testing)
+- [Future Considerations](#future-considerations)
+- [Honour Code](#honour-code)
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+---
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+# The Booking App
 
-This project was bootstrapped for you with [Create React App](https://github.com/facebook/create-react-app).
+This Booking App was created as the final capstone project of the **Meta Front-End Developer Certification**.
 
-## Available Scripts
+**Preview**: Little Lemon is a family-owned Mediterranean restaurant that blends traditional recipes with a modern twist. Our goal is to provide our customers with a unique dining experience that will take them on a culinary journey through the Mediterranean.
 
-In the project directory, you can run:
+**Instructions Received**: To create a modern responsive Front-end for the Little Lemon app with a Bookings feature which they lack at present.
 
-### `npm start`
+---
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+# Setup and Evaluation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
+```s
+# Run in the Terminal
+git clone https://github.com/jayantasamaddar/little-lemon-meta-frontend-capstone.git folder
 
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
+# Install Dependencies
+npm install
 
-### `npm test`
+# Launch app in Browser
+npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Run Tests
+npm test
 
-### `npm run build`
+# Run Tests with Coverage
+npm test:cv
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Front-end Architecture
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There were several considerations for the frontend architecture.
 
-### `npm run eject`
+1. **Folder Structure** - How would the files be organized in the `src` folder.
+2. **Component Architecture** - How best to write reusable components.
+3. **Naming Conventions** - How and why CSS classes, CSS Variables are named so.
+4. **Use of Dependencies** - Choice on what dependencies to use.
+5. **Data Fetching** - How we will manage the data used by the app.
+6. **Unit Testing** - How to have good coverage in our unit tests.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Folder Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Separate folders for:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **components**: For individual components. Complex components have nested `components` folder. The component folder has 4 files usually (some components are auto-tested without having to create a separate test file. Thus a single folder inside the `components` folder is all inclusive as a single Unit having the Renderer, the stylesheet and the unit test.
 
-## Learn More
+  - `Component.jsx` (The Component)
+  - `Component.css` (The stylesheet)
+  - `index.js` (For exporting the component)
+  - `Component.test.jsx` (Test file for the component)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **pages**: Single Pages in the application that have a collection of these components laid out in different ways. The individual pages in the `pages` folder, may further optionally have a `components` (which represent sections, e.g. `Testimonials`) and optionally, a `pages` (for nested pages) folder in them.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **context**: Contains Context Providers and basic hooks to access the Context data.
+- **hooks**: Hooks unrelated to context. E.g. `useWindowResize` to track resizing the window.
+- **actions**: Reducer function and initial states (and any hooks related to them)
+- **utilities**: Utility functions. E.g. `validateNumber`.
+- **settings**: Contains global settings. Has a `cms` folder that mocks a content management system from which we can source content for our pages. Can be internationalized later.
 
-### Code Splitting
+> **Note**: The following has been generated with: `tree -d -I 'node_modules|coverage'`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**The directory tree** (only directories and excluding `node_modules` and `coverage`):
 
-### Analyzing the Bundle Size
+```s
+├── public
+└── src
+    ├── actions
+    ├── assets
+    ├── components
+    │   ├── Backdrop
+    │   ├── Button
+    │   ├── Card
+    │   ├── Error
+    │   ├── Footer
+    │   ├── Header
+    │   │   └── components
+    │   │       └── BurgerMenu
+    │   ├── Heading
+    │   ├── Icon
+    │   ├── Label
+    │   ├── Logo
+    │   ├── Main
+    │   ├── ProgressBar
+    │   ├── ReviewStar
+    │   ├── Select
+    │   │   └── components
+    │   │       └── Option
+    │   ├── SocialMediaWidget
+    │   ├── Stack
+    │   ├── Table
+    │   │   └── components
+    │   │       ├── TableBody
+    │   │       ├── TableCell
+    │   │       ├── TableHeader
+    │   │       └── TableRow
+    │   └── Textfield
+    ├── context
+    │   ├── AppProvider
+    │   ├── FormProvider
+    │   └── ThemeProvider
+    ├── hooks
+    ├── pages
+    │   ├── Booking
+    │   │   ├── components
+    │   │   │   └── BookingForm
+    │   │   └── pages
+    │   │       └── ConfirmedBooking
+    │   └── Home
+    │       └── components
+    │           ├── About
+    │           ├── Hero
+    │           ├── Specials
+    │           └── Testimonials
+    ├── settings
+    │   └── cms
+    └── utilities
+        └── tests
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Component Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+There following Design Patterns have been followed:
 
-### Advanced Configuration
+- Most components are single units of functional code.
+- In case of complex components that are comprised of components that can be used standalone, they were broken into separate components. The folder structure above explains where they reside.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Where responsibility needed to be isolated, it was done: E.g. Table ([read more]('./src/components/../../../src/components/Table/README.md')).
 
-### Deployment
+- The **`Stack`** and **`Table`** elements, **OPTIONALLY** also have the **[Composite Components pattern](https://betterprogramming.pub/compound-component-design-pattern-in-react-34b50e32dea0)**. It allows some more flexibility as explained in the Table documentation above.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  **Example**:
 
-### `npm run build` fails to minify
+  ```jsx
+  import { Table } from './components';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  const CustomTable = () => {
+    return (
+      <Table>
+        <Table.Body>
+          <Table.Header>
+            <Table.Cell>ID</Table.Cell>
+            <Table.Cell>Name</Table.Cell>
+            <Table.Cell>Price</Table.Cell>
+          </Table.Header>
+
+          <Table.Header>
+            <Table.Cell>1</Table.Cell>
+            <Table.Cell>Apple</Table.Cell>
+            <Table.Cell>3.00</Table.Cell>
+          </Table.Header>
+
+          <Table.Header>
+            <Table.Cell>ID</Table.Cell>
+            <Table.Cell>Mango</Table.Cell>
+            <Table.Cell>5.00</Table.Cell>
+          </Table.Header>
+        </Table.Body>
+      </Table>
+    );
+  };
+  ```
+
+- A **FormContextProvider** supplies the current `state` and `dispatch` function to update the state to the Booking Form. This pattern ensures, we can continue to have multiple forms in the app, as we grow the app while having a different Context limited to that individual multi-level form.
+
+---
+
+## Naming Conventions
+
+The naming convention followed are:
+
+- **CSS Component and Page specific Classes**: `LL-Component` for the top level class for the root element for almost every component. The child elements in that tree follow an appended PascalCase name, for e.g.`LL-ComponentSubComponent`.
+
+- **CSS utility classes**: Utility classes like `text-sm`, `text-m`, `text-xl` are preset in `App.css` to offer global styles to quickly switch between font-sizes by any component that allows it. (E.g. the **`Heading`** Component)
+
+- **CSS Variables**: CSS Variables serve as globally used presets for maintaining a standardized look and feel. The idea is to have a write-once-use-throughout approach - no need to keep writing a complex `box-shadow` property for all elements that use `box-shadow`. Instead presets in the form of `box-shadow-1`, `box-shadow-2`, `box-shadow-3` are available to use depending on the position of the element.
+
+---
+
+## Use of Dependencies
+
+This project was developed with the personal intention to minimize dependencies as much as possible to test my core skills.
+
+- No CSS Library has been used. All the CSS has been written from scratch.
+
+- No Form Library like Formik or form validation library like Yup has been used. They have already been used in an earlier project in the certification and the decision was simply to have this implemented without using them. Utility functions like `validateNumber` have been created and used. Find them in the `src/utilities` folder.
+- Font Awesome has been used for the icons.
+
+---
+
+## Data Fetching
+
+A lot of data is replicated (e.g. links at header and footer) and/or is available as an array or an object that can grow or shrink in size. Thus, we need to consider the possibility of retrieving this from a database or a Content Management System. For now, we will mock this by using the data at `settings/cms` folder to simulate fetching from a centralized CMS.
+
+---
+
+## Unit Testing
+
+Unit Testing has been done with the help of React Testing Library, Jest, Jestdom that can already shipped with `create-react-app`.
+
+- The `setupTests.js` have been modified, so that we can interact with the window global object.
+- Mocks for React hooks have been done throughout within the components itself. Mocks for `useContext`, `useLocation`, `useForm`, `dispatch` function of the `useReducer` have all been covered.
+- The unit tests can be found in each of the component and page folders.
+
+---
+
+# Future Considerations
+
+- The use of **Context API** and **`useReducer`** has been done in the Form to make sure the Form can have multiple levels and flexibility for any future modifications. While this is not needed in the Meta Capstone project, however to have an advanced service in a production level application, for e.g. A Mobile Phone OTP Validation service (to confirm that this is a valid person booking, considering restaurant tables are limited and we would like to prevent bots), a middleware form with an input phone field, a button and fields to enter a 4-digit OTP can be present. This field can then dispatch an action - `dispatch({ type: "OTPValidation" })`, which can then be processed by the reducer function and the `stage` updated, so the form can proceed to the next stage.
+
+- A `ThemeProvider` that wraps all Pages of the app that will provide the styling when themes are switched from dark to light.
+
+---
+
+# Honour Code
+
+This demo project is solely done by me, Jayanta Samaddar. You can contact me on **[GitHub](https://www.github.com/jayantasamaddar)** for interesting projects to work on.
